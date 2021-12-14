@@ -77,7 +77,6 @@
                     <td>30%</td>
                 </tr>
                 <!--
-
                     <tr>
                         <td style="text-align: left;">Ampliacion de Legajos / Relojes</td>
                         <td>20%</td>
@@ -109,7 +108,27 @@
         </table>
         <div class="precios caso_unico"> <h4>Caso Unico <i class="far fa-question-circle"><div style="color: white;">Servicio básico de asistencia. Puede tener adicionales.</div></i></h4><h4> U$S 48</h4> </div>
         <br>  
-        <div class="soporte"><h4>Para abonarse a nuestro servicio de soporte y mantenimiento de sofware escriba a soporte@sistemaslenox.com.ar</h4></div>							
+        <div class="soporte"><h4>Para abonarse a nuestro servicio de soporte y mantenimiento de sofware escriba a
+            <input type="checkbox" id="btn-modal">
+                <label for="btn-modal" class="lbl-modal"><u>soporte@sistemaslenox.com.ar</u></label>
+                <div class="modal">
+                    <div class="contenedor">
+                        <header>Contactenos</header>
+                        <label for="btn-modal">X</label>
+                        <div class="contenido">
+                            <form class="formulario" action="">
+                                <input type="text" placeholder="Nombre y Apellido">
+                                <input type="text" placeholder="Razon social y cuit">
+                                <input type="email" placeholder="Email">
+                                <input type="text" placeholder="Asunto">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <input type="submit" placeholder="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+        </h4></div>							
         <div style="width: 90%; margin: auto;">
 
             <h4><b>Los precios expesados son por mes. Se abona el periodo completo</b></h4>
@@ -207,5 +226,95 @@
         }
     
     }
-    
+    /*MODAL*/
+    .modal{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    }
+    .modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+        transition: all 500ms ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+    #btn-modal:checked ~ .modal{
+        opacity: 1;
+        visibility: visible;
+    } 
+    .contenedor{
+        width: 400px;
+        height: 500px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+        transition: all 500ms ease;
+        position: relative;
+        transform: translateY(-30%);
+        border-radius: 15px;
+    }
+    #btn-modal:checked ~ .modal .contenedor{
+        transform: translateY(0%);
+    } 
+    .contenedor header{
+        padding: 10px;
+        background: rgb(182, 4, 4);
+        border-radius: 15px 15px 0 0;
+        color: #fff;
+    }
+    .contenedor label{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .contenido{
+        width: 100%;
+        padding: 10px; 
+    }
+    .contenido h3{
+        margin-bottom: 10px;
+    }
+    .contenido p{
+        margin-bottom: 7px;
+    }
+    #btn-modal{
+        display: none;
+    }
+    .lbl-modal{
+        background: none;
+        /*padding: 10px 15px;
+        border-radius: 4px;*/
+        cursor: pointer;
+    }
+    @media only screen and (min-width:320px) and (max-width:768px){
+        .contenedor{
+            width: 95%;
+        }
+    }
+    .formulario{
+        position: absolute;
+        display: block;
+    }
+    .formulario input, textarea{
+        width: 80%;
+        margin: 10px;
+        border-radius: 10px;
+        height: 2rem;
+        border: rgb(185, 185, 185) 2px solid;
+        padding: 0 1rem;
+    }
+    .formulario textarea{
+        height: 9rem;
+    }
+    .formulario input[type=submit]{
+        width: 40%;
+    }
 </style>
